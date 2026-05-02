@@ -1,0 +1,26 @@
+import { Canvas, useFrame } from "@react-three/fiber";
+import { useRef } from 'react';
+
+const AnimatedBox = () => {
+
+    const boxRef = useRef();
+    useFrame(() => {
+        boxRef.current.rotation.x += 0.005;
+        boxRef.current.rotation.y += 0.005;
+        boxRef.current.rotation.z += 0.005;
+    });
+
+    return (
+        <>
+            <mesh ref={boxRef}>
+                <axesHelper args={[10]} />
+                <boxGeometry args={[2, 2, 2]} />
+                <meshStandardMaterial color={0x00bfff} />
+            </mesh>
+        </>
+
+    )
+
+}
+
+export default AnimatedBox;
