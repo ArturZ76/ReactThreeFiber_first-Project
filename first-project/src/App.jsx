@@ -1,6 +1,8 @@
 import { Canvas } from "@react-three/fiber";
+import { Leva } from 'leva';
 import AnimatedBox from "./components/AnimatedBox";
 import { FirstPersonControls, OrbitControls, GizmoHelper, GizmoViewcube, GizmoViewport } from '@react-three/drei';
+
 
 
 import './App.css'
@@ -11,7 +13,19 @@ function App() {
 
   return (
     <div >
+      {/* <div style={{
+        position: 'fixed',
+        top: '10px',
+        right: '10px',
+        zIndex: 1000,
+        height: 'auto', // Kluczowe: automatyczna wysokość
+        maxHeight: '90vh', // Opcjonalnie: żeby nie wyszedł poza ekran
+        display: 'block'
+      }}>
+        <Leva isRoot fill={false} />
+      </div> */}
       <Canvas>
+
         <GizmoHelper alignment="bottom-right" margin={[80, 80]}>
           <GizmoViewport />
         </GizmoHelper>
