@@ -22,7 +22,7 @@ const AnimatedBox = () => {
 
     return (
         <>
-            <mesh ref={boxRef}>
+            <mesh ref={boxRef} castShadow>
                 <axesHelper args={[10]} />
                 <boxGeometry args={[2, 2, 2]} />
                 <meshStandardMaterial color={0x00bfff} />

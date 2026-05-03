@@ -24,7 +24,7 @@ function App() {
       }}>
         <Leva isRoot fill={false} />
       </div> */}
-      <Canvas>
+      <Canvas shadows>
 
         <GizmoHelper alignment="bottom-right" margin={[80, 80]}>
           <GizmoViewport />
@@ -35,7 +35,13 @@ function App() {
         <FirstPersonControls movementSpeed={1} />
         <OrbitControls />
         <AnimatedBox />
-        <directionalLight position={[2, 5, 1]} />
+        <spotLight position={[2, 5, 1]} intensity={50} color={0Xffea00} castShadow />
+        {/* <directionalLight position={[2, 5, 1]} intensity={0.8} color={0Xffea00}  /> */}
+        <mesh rotation={[-Math.PI / 2, 0, 0]} receiveShadow>
+          <planeGeometry args={[20, 20]} />
+          <meshStandardMaterial />
+        </mesh>
+        {/* <ambientLight intensity={0.2} color={0xfcfcfc} /> */}
       </Canvas>
     </div>
   )
